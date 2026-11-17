@@ -1,0 +1,69 @@
+{
+  "name": "@weeh/dsh-workspace-recency-order",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Sorts DSH sidebar workspace folders by the most recent session update inside each folder.",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "workspace",
+    "sidebar",
+    "sort",
+    "recent"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.2 <0.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "check": "node --check client.js && node --check index.js && node --test test/client.test.mjs",
+    "test": "node --test test/client.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-context-menu",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "author": {
+    "name": "Inspiring26"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inspiring26/dsh-workspace-recency-order.git"
+  },
+  "homepage": "https://github.com/Inspiring26/dsh-workspace-recency-order",
+  "bugs": {
+    "url": "https://github.com/Inspiring26/dsh-workspace-recency-order/issues"
+  }
+}

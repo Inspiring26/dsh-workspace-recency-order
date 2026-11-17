@@ -1,0 +1,3 @@
+- insert:
+    - id: workspace-recency-order
+      name: '@weeh/dsh-workspace-recency-order'

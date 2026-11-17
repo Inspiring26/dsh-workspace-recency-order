@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Workspace recency order",
+    "description": "Sorts sidebar workspace folders by the newest session update inside each folder. The workspace menu can pause or resume automatic sorting; while paused, manual folder drags stay where you drop them."
+  }
+}
